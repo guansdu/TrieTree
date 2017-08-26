@@ -1,4 +1,4 @@
-## trie tree
+## Trie Tree
 
 The implementation of trie tree, based on LeetCode 208 and 14.
 
