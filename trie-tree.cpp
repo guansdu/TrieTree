@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -29,7 +30,7 @@ public:
 	void insert(string s)
 	{
 		TrieNode *p = root;
-		for (int i = 0; i < s.size(); ++i)
+		for (size_t i = 0; i < s.size(); ++i)
 		{
 			if (p->next[s[i] - 'a'] == NULL)
 			{
@@ -61,16 +62,17 @@ public:
 	TrieNode* _find(const string& s)
 	{
 		TrieNode *p = root;
-		for (int i = 0; i < s.size() && p != NULL; ++i)
+		for (size_t i = 0; i < s.size() && p != NULL; ++i)
 			p = p->next[s[i] - 'a'];
 		return p;
 	}
-
+	// parameter: s
+	// --arbitrary string in the trie tree
 	int longest_common_prefix(const string& s)
 	{
 		TrieNode *p = root;
 		int longest = 0;
-		for (int i = 0; i < s.size(); ++i)
+		for (size_t i = 0; i < s.size(); ++i)
 		{
 			if (p->next[s[i] - 'a'] == NULL)
 				break;
